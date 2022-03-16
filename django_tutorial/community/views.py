@@ -19,3 +19,9 @@ def write(request):
 def articlelist(request):
     article_list=Article.objects.all()
     return render(request,'list.html',{'article_list': article_list})
+
+def viewdetail(request, num=1):
+    article_detail = Article.objects.get(id=num)
+    #pass #나중에 구현하려면 이렇게
+    return render(request, 'view_detail.html',
+        {'article_detail':article_detail})

@@ -32,15 +32,14 @@
 <body>
     <div class="article_box">
     <p>
-        <span> 이름 </span>
-        <span> 제목 </span> 
+        <span> 제목 </span>
+        <span> 이름 </span> 
         <span> 작성 날짜 </span>
     </p>
     <ul>
     {% for article in article_list %}
-     <li>
-         <span>{{ article.name }}</span>
-        <span> {{ article.title }} </span> 
+     <li> <a href="/view_detail/{{ article.id }}"><span>{{article.title}}</span> 
+        <span>{{ article.name }}</span>
         <span> {{ article.cdate|date:"Y년 M d일 D"}}</span>
     </li>
      {% endfor %}
