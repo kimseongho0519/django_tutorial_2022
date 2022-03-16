@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from community.forms import Form
 from .models import Article
 
@@ -8,6 +8,7 @@ def write(request):
         form = Form(request.POST)
         if form.is_valid():
             form.save()  #필드값 저장
+            return redirect('.') #입력하고 나서, 정보가 남지않게됨. 
 
     else:
         form =Form()
@@ -21,7 +22,7 @@ def articlelist(request):
     return render(request,'list.html',{'article_list': article_list})
 
 def viewdetail(request, num=1):
-    article_detail = Article.objects.get(id=num)
+    #article_detail = Article.objects.get(pk=num)
+    article_detail = get_object_or_404(Article,pk=num)
     #pass #나중에 구현하려면 이렇게
-    return render(request, 'view_detail.html',
-        {'article_detail':article_detail})
+    return render(request, 'view_detail.html',{'article_detail':article_detail})
