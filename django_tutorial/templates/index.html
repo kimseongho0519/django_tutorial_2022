@@ -39,7 +39,7 @@
         </p>
             <ul>         
         {% for article in lastest_article_list %} 
-         <li> <a href="/view_detail/{{ article.id }}">
+         <li> <a href="community/view_detail/{{ article.id }}">
              <span>{{article.title}}</span> 
             <span>{{ article.name }}</span> 
             <span> {{ article.cdate|date:"Y년 M d일 D"}}</span>
@@ -47,7 +47,7 @@
         </li>
             </ul>
     </div>
-    <p><a href="list/">전체 목록보기</a></p>
-    <button><a href="write/">메모 작성하기</a></button>
+    <p><a href="/community/list/">전체 목록보기</a></p>
+    <button><a href="/community/write/">메모 작성하기</a></button>
 </body>
 </html>

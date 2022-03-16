@@ -39,7 +39,7 @@
     </p>
     <ul>
     {% for article in article_list %}
-     <li> <a href="/view_detail/{{ article.id }}"><span>{{article.title}}</span> 
+     <li> <a href="/community/view_detail/{{ article.id }}"><span>{{article.title}}</span> 
         <span>{{ article.name }}</span>
         <span> {{ article.cdate|date:"Y년 M d일 D"}}</span>
     </li>
