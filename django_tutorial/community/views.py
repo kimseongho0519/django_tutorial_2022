@@ -26,3 +26,8 @@ def viewdetail(request, num=1):
     article_detail = get_object_or_404(Article,pk=num)
     #pass #나중에 구현하려면 이렇게
     return render(request, 'view_detail.html',{'article_detail':article_detail})
+
+def index(request):
+    lastest_article_list = Article.objects.all().order_by('-cdate')[:3]
+    return render(request, 'index.html',{'lastest_article_list':lastest_article_list})
+    #return render(request, '/index.html', {'latest_article_list': latest_article_list})

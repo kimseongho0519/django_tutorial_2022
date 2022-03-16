@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .article_box{
+            width: 500px;
+            background-color: yellow;
+        }
+        p > span{
+            padding: 30px;
+            text-align: center;
+        }
+        ul{
+            border-top:2px solid red;
+        }
+        p > span:first-of-type{
+            width: 150px;
+            display: inline-block;
+        }
+        ul > li > span:first-of-type{
+            width: 150px;
+            display: inline-block;
+        }
+</style>
+<body>
+    
+    <p>안녕.</p>
+    
+    <div class="article_box">
+        <p>
+            <span> 제목 </span>
+            <span> 이름 </span> 
+            <span> 작성 날짜 </span>
+        </p>
+            <ul>         
+        {% for article in lastest_article_list %} 
+         <li> <a href="/view_detail/{{ article.id }}">
+             <span>{{article.title}}</span> 
+            <span>{{ article.name }}</span> 
+            <span> {{ article.cdate|date:"Y년 M d일 D"}}</span>
+        {% endfor %}
+        </li>
+            </ul>
+    </div>
+    <p><a href="list/">전체 목록보기</a></p>
+    <button><a href="write/">메모 작성하기</a></button>
+</body>
+</html>
