@@ -16,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-    {{ dataset }}
+    {% load crispy_forms_tags %}
     <!-- pt-1은 4px,  pt-3은 16px임, pt-4는 24px -->
     <div class="row mt-3 pt-3">
         <div class="col-md-4">
@@ -24,8 +24,8 @@
             <h4>Add Data</h4>
                 <form method="post">
                 {%csrf_token%}
-                {{ form }}
-                <button type="submit">Add</button>
+                {{ form | crispy }}
+                <button type="submit"class='btn btn-success btn-block'>Add</button>
                 </form>
             </div>
             
