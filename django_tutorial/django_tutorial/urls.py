@@ -24,5 +24,6 @@ urlpatterns = [
     #path('community/view_detail/<int:num>/',viewdetail, name='view_detail'),
     path('',index, name='index'),
     path('community/', include('community.urls')),
+    path('dashboard/', include('dashboard.urls')),
 
 ]
