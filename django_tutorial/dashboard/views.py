@@ -9,10 +9,27 @@ def dashboard(request):
     data = CountryData.objects.all()
     # add 버튼 클릭 , 값 입력 요청 처리
     if request.method =='POST':
-    #DB입력
+    # DB입력
         form = CountryDataForm(request.POST)
+        #폼에 입력한 나라
+        input_country = form.data.get('country', None)
+        #폼에 입력한 인구수
+        input_num = form.data.get('population', None)
         if form.is_valid():
-            form.save()
+            # DB 나라이름이 중복된 경우 업데이트
+            # 아닌경우, 추가
+            #CRUD : create , Read , Update , Delate
+            CountryData.objects.update_or_create(
+                #filter
+                country = input_country,
+                #new value
+                defaults = {
+                    'country': input_country,
+                    'population': input_num
+                }
+            )
+
+            #form.save()
             return redirect('.')
     #form 출력 
     else:
