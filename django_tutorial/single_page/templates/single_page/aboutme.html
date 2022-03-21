@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block part_script %}{% endblock %}
+{% block title %}자기소개{% endblock %}
+
+{% load static %}
+{% block content %}
+
+       
+        {% block part_style%}
+        <link rel="stylesheet" href="{% static 'css/aboutme.css' %}">
+        {% endblock %}
+
+
+        <figure>
+            <video src="/imgs/visual.mp4" autoplay muted loop></video>
+            <div class="inner">
+                <h1>Portfolio</h1>
+                <p>Casio Aims to Provide the Important Things You Keep Close in Life. <br>
+                    Casio is creating new value by not only providing products, but also maintaining a dialogue with customers.</p>
+                <a href="#">view detail</a>
+            </div>
+        </figure>
+    
+        <section>
+            <div class="inner">
+                <h1>Daily Watch</h1>
+                <div class="wrap">
+                    <article>
+                        <div class="pic">
+                            <img src="img/casio.JPG" alt="1번째 콘텐츠 이미지">
+                        </div>
+                        <h2><a href="#">News</a></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                            maiores!</p>
+                    </article>
+    
+                    <article>
+                        <div class="pic">
+                            <img src="img/watch2.jpg" alt="2번째 콘텐츠 이미지">
+                        </div>
+                        <h2><a href="#">Details</a></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                            maiores!</p>
+                    </article>
+    
+                    <article>
+                        <div class="pic">
+                            <img src="img/watch3.jpg" alt="3번째 콘텐츠 이미지">
+                        </div>
+                        <h2><a href="#">Best Casio.</a></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                            maiores!</p>
+                    </article>
+    
+                    <article>
+                        <div class="pic">
+                            <img src="img/watch4.jpg" alt="4번째 콘텐츠 이미지">
+                        </div>
+                        <h2><a href="#">Daily Casio.</a></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                            maiores!</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    
+
+{% endblock content %}
