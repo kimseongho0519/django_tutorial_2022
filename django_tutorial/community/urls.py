@@ -6,7 +6,7 @@ urlpatterns = [
  
     path('write/',write, name='write'),
 
-    path('list/',articlelist, name='list'),
+    path('list/',articlelist, name='article_list'),
 
     path('view_detail/<int:num>/', viewdetail, name='view_detail'),
     

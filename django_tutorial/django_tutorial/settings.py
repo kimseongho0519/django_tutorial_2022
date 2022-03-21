@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'dashboard',
     'crispy_forms',
     'single_page',
+    #로그인 인증관련 폼에 적용하는 앱
+    'widget_tweaks',
 ]
 # crispy_forms 설정
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -137,6 +139,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#로그인 처리 성공 후 이동하는 위치
+LOGIN_REDIRECT_URL = '/'
